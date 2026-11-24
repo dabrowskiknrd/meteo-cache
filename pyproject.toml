@@ -30,7 +30,7 @@ Issues = "https://github.com/dabrowskiknrd/meteo-cache/issues"
 
 [dependency-groups]
 dev = [
-    "ipykernel>=7",
+    "ipykernel>=7.4.0",
     "pytest>=8",
 ]
 
