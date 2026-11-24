@@ -1,0 +1,44 @@
+[project]
+name = "meteo-cache"
+version = "0.1.0"
+description = "Hourly historical weather per 0.1-degree cell, fetched from a weather API into an incremental on-disk parquet cache."
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "K. Dabrowski" }]
+keywords = ["weather", "open-meteo", "cache", "parquet", "reanalysis", "era5", "time series"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Typing :: Typed",
+]
+dependencies = [
+    "numpy>=2.5.4",
+    "pandas>=3.1.0",
+    "pyarrow>=26.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/dabrowskiknrd/meteo-cache"
+Repository = "https://github.com/dabrowskiknrd/meteo-cache"
+Issues = "https://github.com/dabrowskiknrd/meteo-cache/issues"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/meteo_cache"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
